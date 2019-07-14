@@ -1,4 +1,5 @@
 # Transfer-Learning
+## VGG transfer learning
 This code using pretrained model VGG16 as the basis to buid a new image recognition model. 
 VGG16 model trained on over 1 million images to classify 1000 categories.
 In this example, we did the "transfer learning" by borrowing the model construction of the first 3 blocks of Convnet layers, 
