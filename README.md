@@ -1,7 +1,11 @@
 # Transfer-Learning
 ## VGG transfer learning
 
-VGG16 model is the winner of ILSVRC 2014 competition for 1000 categories image classification. It consists of 16 convolutional layers. It has very uniform architecture of "vgg block" which includes 2 conv layers followed by one pooling layer.
+VGG16 model is the winner of ILSVRC 2014 competition for 1000 categories image classification. It consists of 16 convolutional layers. It has very uniform architecture of "vgg block" which includes 2 conv layers followed by one pooling layer. VGG models has the following features:
+
+1. Uniform structure
+
+2. All of the masks have size (3,3)
 
 This code uses pretrained model VGG16 as the basis to buid a new image classification model trained on dataset cifar10, which contains smaller size images (32,32) and only 10 categories. 
 
