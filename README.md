@@ -12,7 +12,7 @@ We also borrowed the weights of the first 10 layers. And trained other parameter
 CIFAR10 has a small image classification Dataset of 50,000 32x32 color training images, labeled over 10 categories, and 10,000 test images, which can be accessed directly from Keras. 
 
 ## Build vgg block
-In this code, we built the vgg model from scratch and use Keras ImageDataGenerator Class for preprocessing.
+In this code, instead of transfer learning, we built the vgg model from scratch and use Keras ImageDataGenerator Class for preprocessing.
 
 References:
 
