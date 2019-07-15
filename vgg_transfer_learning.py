@@ -44,6 +44,9 @@ out_layer = layer_dict['block3_pool'].output
 # Stack new layers 
 # First flatten the conv layer, then add fc layer, then softmax. Again, it's may not be a good choice, just an example.
 out_layer = Flatten()(out_layer)
+
+# Here I didn't connect the flatten layer directly to the 10 softmax. Instead I added one 'buffer' layer to improve accuracy.
+# This 'buffer' layer is for managing and filtering info from flatten, which contains 4096 neurons.
 out_layer = Dense(128, 
           kernel_initializer='random_uniform',
           bias_initializer='zeros', 
