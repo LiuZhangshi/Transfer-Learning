@@ -38,11 +38,6 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 # layer_in: the output layer from last block
 # n_filters: number of filters you want to use
 # n_conv: how many conv layers you want to apply
-# The reason of using several (3,3) filters instead of a larger one is that: 
-# 1. their receptive field are the same
-# 2. we incorporate three non-linear rectification layers (3,3) instead of a single one (7,7), 
-# which makes the decision function more discriminative. 
-# 3. we decrease the number of parameters
 def define_vgg_block(layer_in, n_filters, n_conv):
     for _ in range (n_conv):
         layer_in = Conv2D(n_filters, (3,3), padding = 'same', activation = 'relu')(layer_in)
@@ -61,7 +56,7 @@ input_tensor = Input(shape = (32, 32, 3))
 # the input image size is small(32,32), when we apply twice maxpooling, it becomes (8,8)
 # This (8,8), to some extend, indicates it extract 8x8 = 64 features vectors from the previous image. 
 # And it's not bad using the 64 features to make 10 categories.
-# However, if we apply one more maxpooling, only 4x4=16 features left, which may not be a good choice.
+# However, if we apply two more maxpoolings, only 2x2=4 features left, which may definitely not be a good choice.
 block_1 = define_vgg_block(input_tensor, 64, 2)
 block_2 = define_vgg_block(block_1, 128, 2)
 
